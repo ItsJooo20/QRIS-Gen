@@ -6,7 +6,7 @@ Android app to generate dynamic QRIS codes from static QRIS. Built with Kotlin a
 
 ## Features
 
-- Parse static QRIS payload (paste only, next update scan from cam and upload from file)
+- Parse static QRIS payload(now u can upload it from storage or direct scan)
 - Extract merchant information
 - Generate dynamic QRIS with custom amounts
 - Transaction history stored locally
@@ -64,6 +64,8 @@ Open in Android Studio and run! or u can download:
   <img src="screenshots/main.png" width="200"/>
   <img src="screenshots/dialog.png" width="200"/>
   <img src="screenshots/history.png" width="200"/>
+  <img src="screenshots/scan.png" width="200"/>
+  <img src="screenshots/setup.png" width="200"/>
 </p>
 
 ---

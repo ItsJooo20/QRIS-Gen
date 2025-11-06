@@ -55,6 +55,7 @@ class MainViewModel(private val repository: QRISRepository) : ViewModel() {
             try {
                 println("Parsing payload: ${payload.take(50)}...")
 
+                repository.validateQRIS(payload)
                 val parsed = repository.parseQRIS(payload)
 
                 println("Parse result - Valid: ${parsed.isValid}")
@@ -63,7 +64,7 @@ class MainViewModel(private val repository: QRISRepository) : ViewModel() {
                 if (parsed.isValid) {
                     _parsedQRIS.value = parsed
                     _originalPayload.value = payload
-                    _successMessage.value = "QRIS parsed successfully"
+//                    _successMessage.value = "QRIS parsed successfully"
                 } else {
                     _errorMessage.value = "Parse failed: ${parsed.errorMessage ?: "Unknown error"}"
                     println("Error: ${parsed.errorMessage}")
@@ -114,7 +115,7 @@ class MainViewModel(private val repository: QRISRepository) : ViewModel() {
                 )
 
                 _generatedPayload.value = generatedPayload
-                _successMessage.value = "QRIS generated successfully"
+//                _successMessage.value = "QRIS generated successfully"
 
             } catch (e: Exception) {
                 _errorMessage.value = "Generation failed: ${e.message}"
@@ -158,7 +159,7 @@ class MainViewModel(private val repository: QRISRepository) : ViewModel() {
 
                 repository.saveTransaction(transaction)
 
-                _successMessage.value = "Transaction saved to history"
+//                _successMessage.value = "Transaction saved to history"
 
             } catch (e: Exception) {
                 _errorMessage.value = "Failed to save: ${e.message}"

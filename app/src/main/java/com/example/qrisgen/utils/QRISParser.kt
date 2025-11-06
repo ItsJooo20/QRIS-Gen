@@ -60,24 +60,36 @@ object QRISParser {
     }
 
     fun isValidQRIS(payload: String): Boolean {
-        if (payload.length < 50) return false
+        val cleanPayload = payload.trim()
+        println("Payload length: ${cleanPayload.length}")
+
+        if (cleanPayload.length < 50) {
+            println("Too short")
+            return false
+        }
 
         try {
-            if (!payload.contains("6304")) {
-                println("No CRC tag found")
+            if (!cleanPayload.contains("6304")) {
+                println("No CRC tag (6304) found")
                 return false
             }
 
-            val payloadWithoutCRC = payload.substring(0, payload.length - 4)
-            val providedCRC = payload.substring(payload.length - 4)
+            val providedCRC = cleanPayload.takeLast(4).uppercase()
+            val payloadForCalculation = cleanPayload.substring(0, cleanPayload.length - 4)
 
-            val calculatedCRC = CRCCalculator.calculateCRC(
-                payloadWithoutCRC + Constants.EMVTags.CRC + "04"
-            )
+            println("Payload for calc: $payloadForCalculation")
+            println("Provided CRC: $providedCRC")
 
-            return providedCRC.equals(calculatedCRC, ignoreCase = true)
+            val calculatedCRC = CRCCalculator.calculateCRC(payloadForCalculation).uppercase()
+
+            println("Calculated CRC: $calculatedCRC")
+            println("Match: ${providedCRC == calculatedCRC}")
+
+            return providedCRC == calculatedCRC
 
         } catch (e: Exception) {
+            println("Exception: ${e.message}")
+            e.printStackTrace()
             return false
         }
     }

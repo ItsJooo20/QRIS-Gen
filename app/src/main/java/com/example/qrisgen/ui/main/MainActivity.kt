@@ -32,8 +32,6 @@ class MainActivity : AppCompatActivity() {
         MainViewModelFactory(repository)
     }
 
-    private var currentQRBitmap: Bitmap? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -259,9 +257,9 @@ class MainActivity : AppCompatActivity() {
             feeType = feeType,
         )
 
-        dialog.setOnSaveClickedListener { savedPayload ->
-            viewModel.saveTransaction()
-        }
+//        dialog.setOnSaveClickedListener { savedPayload ->
+//            viewModel.saveTransaction()
+//        }
 
         dialog.show(supportFragmentManager, "QRResultDialog")
         viewModel.saveTransaction()

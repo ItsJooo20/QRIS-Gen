@@ -129,7 +129,7 @@ class QRResultDialog : DialogFragment() {
         binding.btnCopy.setOnClickListener {
             qrPayload?.let { payload ->
                 copyToClipboard(payload)
-                Toast.makeText(context, "QRIS copied to clipboard", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "copied to clipboard", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -143,8 +143,8 @@ class QRResultDialog : DialogFragment() {
         binding.btnSave.setOnClickListener {
             qrPayload?.let { payload ->
                 onSaveClicked?.invoke(payload)
-                Toast.makeText(context, "Saved to history", Toast.LENGTH_SHORT).show()
-                dismiss()
+                Toast.makeText(context, "Download coming soon!", Toast.LENGTH_SHORT).show()
+//                dismiss()
             }
         }
     }

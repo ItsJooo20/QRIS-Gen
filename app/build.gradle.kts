@@ -48,6 +48,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.11.0")
     implementation("androidx.room:room-ktx:2.8.3")
     implementation("androidx.room:room-runtime:2.8.3")
+    implementation(libs.androidx.runtime.saved.instance.state)
     kapt("androidx.room:room-compiler:2.8.3")
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation("com.google.zxing:core:3.5.3")
