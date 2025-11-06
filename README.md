@@ -61,11 +61,12 @@ Open in Android Studio and run! or u can download:
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/main.png" width="200"/>
-  <img src="screenshots/dialog.png" width="200"/>
-  <img src="screenshots/history.png" width="200"/>
-  <img src="screenshots/scan.png" width="200"/>
-  <img src="screenshots/setup.png" width="200"/>
+  <img src="screenshots/main.PNG" width="200"/>
+  <img src="screenshots/dialog.PNG" width="200"/>
+  <img src="screenshots/history.PNG" width="200"/>
+  <img src="screenshots/scan.PNG" width="200"/>
+  <img src="screenshots/setup.PNG" width="200"/>
 </p>
 
 ---
+
